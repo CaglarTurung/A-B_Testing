@@ -4,7 +4,7 @@
 Facebook recently introduced a new type of offer that is an alternative to the current type of bidding called maximum bidding he introduced average bidding. One of our customers wants to test the effects of the new feature with a/b testing.
 
 ## The Story of the Data Set
-This data set includes of the information about web site.
+This data set includes information about web site
 There are two separate data sets, the control and test groups.
 
 ## Variables
