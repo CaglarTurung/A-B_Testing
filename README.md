@@ -8,7 +8,7 @@ This data set includes of the information about web site.
 There are two separate data sets, the control and test groups.
 
 ## Variables
-* Impression - count of ad views 
+* Impression - Count of ad views 
 * Click - Specifies the number of clicks on the display ad
 * Purchase - Indicates the number of products purchased after the ads clicked
 * Earning - Earnings after purchased products
