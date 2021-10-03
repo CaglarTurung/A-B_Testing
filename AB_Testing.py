@@ -30,7 +30,7 @@ df_avr["Purchase"].mean() # --> 582.1060966484675
 
 # The Assumptions of normality
 # H0: Assumption of normal distribution is provided.
-# H1: Assumption of normal distribution is provided.
+# H1: Assumption of normal distribution is not provided.
 
 test_stat, pvalue = shapiro(df_max["Purchase"].dropna())
 print('Test Stat = %.4f, p-value = %.4f' % (test_stat, pvalue))
@@ -40,7 +40,7 @@ test_stat, pvalue = shapiro(df_avr["Purchase"].dropna())
 print('Test Stat = %.4f, p-value = %.4f' % (test_stat, pvalue))
 #p-value = 0.1541
 
-#Since the p-value is not less than 0.05 Ho:Undeniable
+#Because of the p-value is not less than 0.05 H0:Irrefutable
 
 # Homogeneity of variance
 # H0: Variances are homogeneous
@@ -52,10 +52,10 @@ test_stat, pvalue = levene(df_max["Purchase"].dropna(),
 print('Test Stat = %.4f, p-value = %.4f' % (test_stat, pvalue))
 #p-value = 0.1083
 
-#Since the p-value is not less than 0.05 Ho:Undeniable
+#Because of the p-value is not less than 0.05 H0:Irrefutable
 
-#We will apply Parametric testing because variance is provided.
-
+#Due to the variance was provided, parametric tests will be applied
+ 
 test_stat, pvalue = ttest_ind(df_max["Purchase"],
                               df_avr["Purchase"],
                               equal_var=True)
@@ -64,20 +64,20 @@ print('Test Stat = %.4f, p-value = %.4f' % (test_stat, pvalue))
 
 #p-value = 0.3493
 
-#Since the p-value is not less than 0.05 Ho:Undeniable
+#Because of the p-value is not less than 0.05 H0:Irrefutable
 
 
-#Task 3 What tests did you use? Specify the reasons.
+#Task 3 Which tests did you use? Specify the reasons.
 
-#In the application of two independent samples t-test, the assumptions of normal distribution and homogeneous distribution are tested first.
-#We tested the normal distribution assumption with shapiro method and the homogeneous distribution assumption with Levene methods.
-#If the assumptions are met, if parametric is not provided, nonparametric test methods are applied.
+#In the application of two independent samples t-test, the assumptions of normal distribution and homogeneous distribution were tested first.
+#We tested the assumptions of normal distribution with shapiro method and the homogeneous distribution with Levene methods.
+#If the assumptions are met, the parametric method is used, if not, the nonparametric method is applied.
 #Since we observed that the assumptions were met in our study, we applied the parametric method, the t-test.
-# As a result, we observed that the Ho hypothesis is undeniable.
+# As a result, we observed that the H0 hypothesis is irrefutable.
 
 #Task 4
 
-#When the data between the old system and the new system were examined, no statistically significant difference was found between the two systems..
+#When the data examined between the old system and the new system, there was no statistically significant difference.
 #If it is increasing based on clicks per impression, we may recommend that the customer continue the experiments and follow the process.
 
 
@@ -104,7 +104,7 @@ test_stat, pvalue = shapiro(df_avr["Conversion_Rate"].dropna())
 print('Test Stat = %.4f, p-value = %.4f' % (test_stat, pvalue))
 # p-value = 0.0001
 
-#Ho:Rejected. The normality assumption is rejected. Therefore, the Nonparametric method will be applied.
+#H0:Rejected. The normality assumption is rejected. Therefore, the Nonparametric method will be applied.
 
 test_stat, pvalue = mannwhitneyu(df_max["Conversion_Rate"].dropna(),
                                  df_avr["Conversion_Rate"].dropna())
@@ -112,7 +112,7 @@ test_stat, pvalue = mannwhitneyu(df_max["Conversion_Rate"].dropna(),
 print('Test Stat = %.4f, p-value = %.4f' % (test_stat, pvalue))
 #p-value = 0.0000
 
-#Ho=Rejected. The hypothesis that there is no statistically significant difference in conversion_rate increment value between the two systems is rejected.
-#Since the conversion_rate increase is statistically significant, we can recommend the customer to extend the experiments and follow the process.
+#H0=Rejected. 
+#Due to the conversion rate increase is statistically significant, we can recommend the customer to extend the experiments and follow the process.
 
 
